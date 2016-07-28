@@ -20,7 +20,7 @@ hs_err_pid*
 
 .recommenders
 
-/chapter_2/.settings/
+/**/.settings/
 
 /*/.classpath
 
