@@ -8,13 +8,14 @@
   <name>chapter_2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-  
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+      
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+    	<groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+    	<version>4.11</version>
+    	<scope>test</scope>
+	</dependency>
     
     <dependency>
         <groupId>org.springframework</groupId>
@@ -22,20 +23,107 @@
         <version>3.1.1.RELEASE</version>
     </dependency>
     
-    
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>3.1.1.RELEASE</version>
+    </dependency>
 
     <dependency>
     	<groupId>org.apache.geronimo.specs</groupId>
     	<artifactId>geronimo-servlet_2.5_spec</artifactId>
     	<version>1.2</version>
     </dependency>
+    
+    
+    <!-- MySQL database driver -->  
+    <dependency>  
+        <groupId>mysql</groupId>  
+        <artifactId>mysql-connector-java</artifactId>  
+        <version>5.1.15</version>  
+    </dependency> 
+    
+    <!-- Spring JDBC -->
+    <dependency>  
+    	<groupId>org.springframework</groupId>  
+   	 	<artifactId>spring-jdbc</artifactId>  
+    	<version>3.1.1.RELEASE</version>  
+	</dependency>
+
+
     <dependency>
     	<groupId>org.springframework</groupId>
-    	<artifactId>spring-webmvc</artifactId>
-    	<version>3.0.5.RELEASE</version>
+    	<artifactId>spring-context-support</artifactId>
+    	<version>3.1.1.RELEASE</version>
     </dependency>
+    
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-tx</artifactId>
+    	<version>3.1.1.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>1.2.2</version>
+	</dependency>
+	
+	<dependency> 
+     	<groupId>org.springframework</groupId> 
+     	<artifactId>spring-aspects</artifactId> 
+     	<version>3.1.1.RELEASE</version> 
+	</dependency>
+
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>1.8.9</version>
+	</dependency>
+	<dependency>
+		<groupId>aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>1.5.4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>3.1.1.RELEASE</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-pool</groupId>
+		<artifactId>commons-pool</artifactId>
+		<version>20030825.183949</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib</artifactId>
+		<version>3.2.4</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>20040616</version>
+	</dependency>
   </dependencies>
   <build>
     <finalName>chapter_2</finalName>
+    <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+        </configuration>
+    </plugin>
+    </plugins>
   </build>
 </project>
