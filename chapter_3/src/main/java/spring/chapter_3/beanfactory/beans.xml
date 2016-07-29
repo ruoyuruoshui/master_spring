@@ -4,9 +4,10 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	
-	<bean id="car" class="master_spring.chapter_3.LECar"
-		p:brand="红旗 CA72"
-		p:color="黑色"
-		p:maxSpeed="200" />
+		
+    <bean id="lecar" class="spring.chapter_3.beanfactory.LECarLife"
+    	init-method="myInit" 
+    	destroy-method="myDestroy"
+    	p:brand="Audi A4"
+    	p:maxSpeed="280" /> 
 </beans>
