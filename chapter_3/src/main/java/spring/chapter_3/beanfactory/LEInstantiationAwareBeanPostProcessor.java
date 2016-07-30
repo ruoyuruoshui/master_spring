@@ -9,17 +9,32 @@ import org.springframework.beans.factory.config.InstantiationAwareBeanPostProces
 public class LEInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
 
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-		System.out.println("InstantiationAware BeanPostProcessor.postBeforeInitialization");
+		if (beanName.equals("lecar")) {
+			LECarLife car = (LECarLife) bean;
+			if (car.getColor() == null) {
+				System.out.println("Invoked BeanPostProcessor.postProcessBeforeInitialization "
+						+ "car Color is null. Now we set it Black");
+				car.setColor("Black");
+			}
+		}
 		return bean;
 	}
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		System.out.println("InstantiationAware BeanPostProcessor.postProcessAfterInitialization");
+		if (beanName.equals("lecar")) {
+			LECarLife car = (LECarLife)bean;
+			if (car.getMaxSpeed() >= 200) {
+				System.out.println("adjust BeanPostProcessor.postProcess AfterInitilization(), setMaxSpeed To 200");
+			}
+			car.setMaxSpeed(200);
+		}
 		return bean;
 	}
 
 	public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
 		System.out.println("InstantiationAware BeanPostProcessor.postBeforeInstantiation");
+		
+		System.out.println("Instatiation Bean: " + beanClass);
 		return null;
 	}
 
@@ -34,6 +49,7 @@ public class LEInstantiationAwareBeanPostProcessor implements InstantiationAware
 			String beanName) throws BeansException {
 		if (beanName.equals("lecar")) {
 			System.out.println("Instantiation AwareBeanPostProcessor.postProcessPropertyValues");
+			System.out.println("Instantiation Property Values" + pvs);
 		}
 		return pvs;
 	}

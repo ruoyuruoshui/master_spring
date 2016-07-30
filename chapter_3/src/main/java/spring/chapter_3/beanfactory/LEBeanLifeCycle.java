@@ -13,7 +13,7 @@ public class LEBeanLifeCycle {
 		
 		BeanFactory bf = new XmlBeanFactory(res);
 		
-		((ConfigurableBeanFactory)bf).addBeanPostProcessor(new LEBeanPostProcessor());
+		//((ConfigurableBeanFactory)bf).addBeanPostProcessor(new LEBeanPostProcessor());
 		
 		((ConfigurableBeanFactory)bf).addBeanPostProcessor(new LEInstantiationAwareBeanPostProcessor());
 		

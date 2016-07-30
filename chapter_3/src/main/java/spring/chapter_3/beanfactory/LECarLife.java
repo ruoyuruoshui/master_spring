@@ -22,6 +22,7 @@ public class LECarLife implements BeanFactoryAware, BeanNameAware,
 	}
 
 	public void setColor(String color) {
+		System.out.println("调用 setColor() 设置属性");
 		this.color = color;
 	}
 
@@ -30,6 +31,7 @@ public class LECarLife implements BeanFactoryAware, BeanNameAware,
 	}
 
 	public void setMaxSpeed(int maxSpeed) {
+		System.out.println("调用 setMaxSpeed() 设置属性");
 		this.maxSpeed = maxSpeed;
 	}
 	
@@ -56,7 +58,7 @@ public class LECarLife implements BeanFactoryAware, BeanNameAware,
 	}
 	
 	public String introduce() {
-		return "Brand" + brand + " Color:" + color + " maxSpeed" + maxSpeed;
+		return "Brand:" + brand + " Color:" + color + " MaxSpeed:" + maxSpeed;
 	}
 
 	public void destroy() throws Exception {
